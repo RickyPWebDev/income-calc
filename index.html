@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Income & Bills Tracker</title>
+    <link rel="stylesheet" href="styles/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Income & Bills Tracker</h1>
+
+        <div class="main-content">
+            <!-- Input section for income and bills -->
+            <div class="input-section">
+                <label for="income">Monthly Income After Deductions:</label>
+                <input type="number" id="income" placeholder="Enter income amount">
+                <button onclick="calculateFunds()">Calculate Available Funds</button>
+
+                <label for="bill-name">Bill Name:</label>
+                <input type="text" id="bill-name" placeholder="Enter bill name">
+                
+                <label for="bill-amount">Bill Amount:</label>
+                <input type="number" id="bill-amount" placeholder="Enter bill amount">
+
+                <div>
+                    <label>Bill Type:</label>
+                    <input type="radio" id="household" name="bill-type" value="household" checked>
+                    <label for="household">Household</label>
+                    <input type="radio" id="entertainment" name="bill-type" value="entertainment">
+                    <label for="entertainment">Entertainment</label>
+                </div>
+
+                <button onclick="addBill()">Add Bill</button>
+            </div>
+
+            <!-- Display pie chart next to input form -->
+            <div class="output-section">
+                <h2>Available Funds</h2>
+                <p id="available-funds">£0</p>
+            </div>
+
+            <div class="chart-section">
+                <h2>Bills Breakdown</h2>
+                <canvas id="bills-chart" width="100" height="100"></canvas>
+            </div>
+        </div>
+
+        <!-- Display list of bills -->
+        <h2>List of Bills</h2>
+        <ul id="bill-list"></ul>
+
+        
+    </div>
+
+    <!-- Include Chart.js from CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="scripts/scripts.js"></script>
+</body>
+</html>
